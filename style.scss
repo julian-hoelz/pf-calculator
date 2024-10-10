@@ -1,0 +1,72 @@
+@use "sass:color";
+
+$background-color: #121212;
+$text-color: #ffffff;
+$container-bg: #1e1e1e;
+$input-bg: #2a2a2a;
+$input-border: #333333;
+$output-bg: #333333;
+$border-radius: 5px;
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+
+    .container {
+        width: 600px;
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: $container-bg;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid $input-border;
+            border-radius: $border-radius;
+            background-color: $input-bg;
+            color: $text-color;
+            font-size: 1.1em;
+
+            &:focus {
+                outline: none;
+                border-color: $text-color;
+                background-color: color.scale($input-bg, $lightness: 20%);;
+            }
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: $output-bg;
+            border-radius: $border-radius;
+            min-height: 60px;
+            font-size: 1.4em;
+            color: #b8b8b8;
+            font-style: italic;
+        }
+
+        #error-display {
+            color: red;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+    }
+}
